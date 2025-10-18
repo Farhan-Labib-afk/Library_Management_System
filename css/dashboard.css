@@ -1,0 +1,406 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: url("../assets/images/library-bg-blur.jpg") center/cover no-repeat fixed;
+  background-color: #f7f7f7;
+  overflow-x: hidden;
+}
+
+/* ---------- TOPBAR ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1d3d4f;
+  color: white;
+  padding: 12px 24px;
+  height: 68px; /* a bit taller */
+  z-index: 1001;
+  position: relative; /* for centered logo overlay */
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.topbar-logo {
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+.menu-btn {
+  font-size: 1.4rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  padding: 0 8px;
+}
+
+.topbar-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  width: 320px;
+  outline: none;
+}
+
+/* Search area inside main */
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 24px;
+}
+
+.search-btn {
+  background: linear-gradient(135deg, #1d3d4f, #177db9);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn:hover {
+  filter: brightness(1.05);
+}
+
+.profile-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.profile-name {
+  font-weight: 500;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+/* ---------- DROPDOWN ---------- */
+.dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  color: #333;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.dropdown.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown li {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background: #e0e0e0;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  position: fixed;
+  left: -230px;
+  top: 68px; /* match taller topbar */
+  width: 230px;
+  height: calc(100vh - 68px);
+  background: #1d3d4f;
+  color: white;
+  padding: 20px 0;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.nav li {
+  padding: 12px 20px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.nav li:hover,
+.nav li.active {
+  background: linear-gradient(135deg, #1d3d4f, #177db9);
+  font-weight: 600;
+}
+
+/* ---------- MAIN ---------- */
+.main {
+  flex: 1;
+  margin-left: 0;
+  transition: margin-left 0.3s ease;
+  padding: 30px;
+}
+
+.sidebar.open ~ .main {
+  margin-left: 230px;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+}
+
+.welcome {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.role {
+  color:  #265d7d;
+}
+
+/* ---------- QUICK ACTIONS ---------- */
+.quick-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.card {
+  flex: 1 1 180px;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg,  #1d3d4f, #177db9);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card i {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- BOOK SECTIONS ---------- */
+.book-section {
+  margin-bottom: 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.see-more {
+  background: linear-gradient(135deg, #1d3d4f, #177db9);
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.see-more:hover {
+  background: #52796f;
+}
+
+.book-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.book-carousel img,
+.swiper .swiper-slide img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.book-carousel img:hover,
+.swiper .swiper-slide img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- SWIPER ---------- */
+.swiper {
+  width: 100%;
+  max-width: 1000px; /* 6 cards x 150 + 5 gaps x 20 = 1000 */
+  margin: 20px auto;
+}
+
+/* Center slide contents so images keep exact size */
+.swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #8a8a8a; /* default grey */
+  background: transparent;
+  border: none;
+  width: 48px; /* larger hit-area */
+  height: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #2a7cff; /* modern blue on hover */
+  transform: translateY(-50%) scale(1.05);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: currentColor; /* colorizable via currentColor */
+}
+
+/* SVG mask chevrons for crisp, modern arrows */
+.swiper-button-next::after {
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 4 L16 12 L8 20" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
+}
+
+.swiper-button-prev::after {
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 4 L8 12 L16 20" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 4 L8 12 L16 20" fill="none" stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>') center / contain no-repeat;
+}
+
+/* subtle square behind the arrow to replace dots visually */
+
+
+/* Force-hide any pagination dots globally (backup) */
+.swiper-pagination,
+.swiper-pagination-bullets,
+.swiper-pagination-clickable {
+  display: none !important;
+}
+
+.swiper-pagination-bullet {
+  background: #84a98c;
+  opacity: 0.8;
+}
+
+.swiper-pagination-bullet-active {
+  background: #52796f;
+}
+
+/* ---------- ACTIVITY LOG ---------- */
+.recent {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.recent h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.recent ul {
+  list-style: none;
+  line-height: 1.6;
+}
+
+/* ---------- ANIMATIONS ---------- */
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .search { display: none; }
+  .profile-name { display: none; }
+  .sidebar.open ~ .main { margin-left: 0; }
+  .swiper-slide img {
+    width: 120px;
+    height: 180px;
+  }
+}

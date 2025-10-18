@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calgary Public Library - Employee Login</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+  <img src="assets/icons/cpl_logo.png" alt="Calgary Public Library logo" class="logo">
+      <h2>Employee Login</h2>
+
+      <form id="loginForm">
+        <label for="username">Employee ID</label>
+        <input type="text" id="username" placeholder="Enter your ID" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p class="footer-text">© 2025 Calgary Public Library. Internal Access Only.</p>
+    </div>
+  </div>
+
+  <script>
+    // Fake login for demonstration (using localStorage)
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // Sample fake credentials
+      const employees = {
+        "joyc52": "frontdesk123",
+        "riley35": "inventory123",
+        "ashley57": "manager123",
+        "alan14": "volunteer123",
+        "oliver24": "logistics123",
+        "tony52": "techdesk123"
+      };
+
+      if (employees[username] && employees[username] === password) {
+        localStorage.setItem("loggedInEmployee", username);
+        alert(`Welcome back, ${username}!`);
+        window.location.href = "dashboard.html"; // redirect to fake dashboard
+      } else {
+        alert("Invalid credentials. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

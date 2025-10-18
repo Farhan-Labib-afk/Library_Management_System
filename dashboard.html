@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Library Staff Dashboard | Calgary Public Library</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="left-section">
+      <button id="menu-btn" class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+    <div class="topbar-center">
+      <img src="assets/icons/cpl_logo.png" alt="CPL Logo" class="topbar-logo">
+    </div>
+
+    <!-- Search moved to main content -->
+
+    <div class="profile-top" id="profileMenuBtn">
+      <span class="profile-name"></span>
+      <img src="assets/images/profile.jpg" alt="User" class="avatar" />
+      <div class="dropdown" id="profileDropdown">
+        <ul>
+          <li>Settings</li>
+          <li class="logout-option">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <ul class="nav">
+      <li class="active"><i class="fa-solid fa-gauge"></i> Dashboard</li>
+      <li><i class="fa-solid fa-book"></i> Inventory Management</li>
+      <li><i class="fa-solid fa-user-check"></i> Patron Services</li>
+      <li><i class="fa-solid fa-book-bookmark"></i> Shelving Assistant</li>
+      <li><i class="fa-solid fa-truck"></i> Transfer & Logistics</li>
+      <li><i class="fa-solid fa-users-gear"></i> Staff Management</li>
+      <li><i class="fa-solid fa-laptop"></i> Tech Rentals</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <section class="content">
+      <h1 class="welcome fade-in">
+        Welcome Back, Riley <span class="role">(Inventory Clerk)</span>
+      </h1>
+
+      <!-- SEARCH IN MAIN -->
+      <div class="search-area fade-in">
+        <input type="text" placeholder="Search inventory..." class="search" />
+        <button class="search-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="quick-actions fade-in">
+        <button class="card" title="Add, edit, or remove book records">
+          <i class="fa-solid fa-book-open"></i><br>Manage Inventory
+        </button>
+        <button class="card" title="Check out books for patrons">
+          <i class="fa-solid fa-arrow-up"></i><br>Patron Check-Out
+        </button>
+        <button class="card" title="Check in returned books">
+          <i class="fa-solid fa-arrow-down"></i><br>Book Check-In
+        </button>
+        <button class="card" title="Scan barcodes or enter manually">
+          <i class="fa-solid fa-barcode"></i><br>Scan / Input
+        </button>
+      </div>
+
+      <!-- BOOK CATALOG -->
+      <section class="book-section fade-in">
+        <div class="section-header">
+          <h2>Book Catalog</h2>
+          <button class="see-more">See More</button>
+        </div>
+        <div class="book-carousel">
+          <img src="assets/images/book1.jpg" alt="Book" />
+          <img src="assets/images/book2.jpg" alt="Book" />
+          <img src="assets/images/book3.jpg" alt="Book" />
+          <img src="assets/images/book4.jpg" alt="Book" />
+          <img src="assets/images/book5.jpg" alt="Book" />
+          <img src="assets/images/book6.jpg" alt="Book" />
+        </div>
+      </section>
+
+      <!-- NEW ARRIVALS -->
+      <section class="book-section fade-in">
+        <div class="section-header">
+          <h2>New Arrivals</h2>
+        </div>
+        <div class="swiper new-arrivals">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/images/new1.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new2.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new3.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new4.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new5.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new1.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new2.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new3.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new4.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/new5.jpg" alt="Book"></div>
+          </div>
+          <div class="swiper-button-next new-arrivals-next"></div>
+          <div class="swiper-button-prev new-arrivals-prev"></div>
+        </div>
+      </section>
+
+      <!-- MOST LIKED -->
+      <section class="book-section fade-in">
+        <div class="section-header">
+          <h2>Most Liked Books</h2>
+        </div>
+        <div class="swiper liked-books">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/images/like1.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like2.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like3.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like4.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like5.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like1.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like2.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like3.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like4.jpg" alt="Book"></div>
+            <div class="swiper-slide"><img src="assets/images/like5.jpg" alt="Book"></div>
+          </div>
+          <div class="swiper-button-next liked-books-next"></div>
+          <div class="swiper-button-prev liked-books-prev"></div>
+        </div>
+      </section>
+
+      <!-- ACTIVITY LOG -->
+      <section class="recent fade-in">
+        <h2>Recent Activity Log</h2>
+        <ul>
+          <li>🕒 <strong>10:15 AM</strong> – “Book X” checked out by <em>User A</em></li>
+          <li>⚠️ <strong>10:00 AM</strong> – “Book Y” marked damaged.</li>
+          <li>📥 <strong>9:45 AM</strong> – “Book Z” returned by <em>User B</em></li>
+          <li>📦 <strong>9:30 AM</strong> – Shipment #12 received from Central Branch.</li>
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
