@@ -3,6 +3,17 @@ const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.getElementById("sidebar");
 menuBtn.addEventListener("click", () => sidebar.classList.toggle("open"));
 
+// Add navigation for inventory management
+const inventoryNavItems = document.querySelectorAll('.nav li');
+inventoryNavItems.forEach(item => {
+  if (item.textContent.includes('Inventory Management')) {
+    item.addEventListener('click', () => {
+      window.location.href = 'inventory.html';
+    });
+    item.style.cursor = 'pointer';
+  }
+});
+
 // Profile dropdown
 const profileBtn = document.getElementById("profileMenuBtn");
 const dropdown = document.getElementById("profileDropdown");
@@ -191,6 +202,16 @@ function renderFromData(data) {
   renderSwiper(".liked-books", data.liked);
 }
 
+// Add navigation for quick action inventory lookup
+function setupQuickActions() {
+  const lookupInventoryBtn = document.querySelector('.quick-actions .card:first-child');
+  if (lookupInventoryBtn) {
+    lookupInventoryBtn.addEventListener('click', () => {
+      window.location.href = 'inventory.html';
+    });
+  }
+}
+
 async function initDashboardFromJson() {
   try {
     const res = await fetch("data/books.json");
@@ -199,12 +220,14 @@ async function initDashboardFromJson() {
     createSwipers();
     await enhanceBookCovers();
     enableBookClicks();
+    setupQuickActions();
   } catch (e) {
     console.error("Failed loading books.json", e);
     // Still initialize swipers so UI works
     createSwipers();
     await enhanceBookCovers();
     enableBookClicks();
+    setupQuickActions();
   }
 }
 
