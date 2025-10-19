@@ -253,7 +253,7 @@ body {
   align-items: center;
 }
 
-.see-more {
+/* .see-more {
   background: linear-gradient(135deg, #016f6f, #1ab8b8);
   border: none;
   color: white;
@@ -261,7 +261,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s;
-}
+} */
 
 .see-more:hover {
   background: #0e6c6c;

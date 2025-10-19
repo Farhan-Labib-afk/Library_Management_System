@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventory Management | Calgary Public Library</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/inventory.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="left-section">
+      <a href="dashboard.html" class="menu-btn" title="Back to Dashboard"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="topbar-center">
+      <img src="assets/icons/cpl_logo.png" alt="CPL Logo" class="topbar-logo">
+    </div>
+    <div></div>
+  </header>
+
+  <main class="main">
+    <section class="content">
+      <h1 class="fade-in">Inventory Management & Lookup</h1>
+
+      <!-- Search -->
+      <div class="search-area fade-in">
+        <input id="searchInput" type="text" placeholder="Search by title, author, or genre..." class="search" />
+        <button id="searchBtn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <!-- Table -->
+      <div class="table-container fade-in">
+        <table class="inventory-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Genre</th>
+              <th>Copies</th>
+              <th>Shelf Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="inventoryBody">
+            <tr><td colspan="6" style="text-align:center;">Loading books...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- BOOK INFO MODAL -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <div class="modal-flex">
+        <img id="modalCover" src="assets/images/book_fb.png" alt="Book Cover" />
+        <div class="modal-info">
+          <h2 id="modalTitle">Book Title</h2>
+          <p><strong>Author:</strong> <span id="modalAuthor"></span></p>
+          <p><strong>Genre:</strong> <span id="modalGenre"></span></p>
+          <p><strong>Copies in Stock:</strong> <span id="modalCount"></span></p>
+          <p><strong>Shelf Location:</strong> <span id="modalShelf"></span></p>
+          <hr>
+          <p id="modalSummary" class="modal-summary"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/inventory.js"></script>
+</body>
+</html>
