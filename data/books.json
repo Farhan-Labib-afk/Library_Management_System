@@ -1,35 +1,567 @@
 {
   "catalog": [
-    {"id": "the-hobbit", "title": "The Hobbit", "author": "J.R.R. Tolkien", "isbn": "9780345339683", "genre": "Fantasy"},
-    {"id": "pride-prejudice", "title": "Pride and Prejudice", "author": "Jane Austen", "isbn": "9780141439518", "genre": "Classic"},
-    {"id": "1984", "title": "1984", "author": "George Orwell", "isbn": "9780451524935", "genre": "Dystopian"},
-    {"id": "catcher-rye", "title": "The Catcher in the Rye", "author": "J.D. Salinger", "isbn": "9780316769488", "genre": "Classic"},
-    {"id": "mobydick", "title": "Moby-Dick", "author": "Herman Melville", "isbn": "9781503280786", "genre": "Adventure"},
-    {"id": "gatsby", "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "isbn": "9780743273565", "genre": "Classic"}
+    {
+      "id": "the-hobbit",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780345339683",
+      "genre": "Fantasy",
+      "count": 5,
+      "shelfLocation": "Aisle 1, Shelf A",
+      "summary": "Bilbo Baggins, a quiet hobbit, is drawn into an adventure with a group of dwarves to reclaim their mountain home from a fierce dragon named Smaug."
+    },
+    {
+      "id": "pride-prejudice",
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "isbn": "9780141439518",
+      "genre": "Classic",
+      "count": 3,
+      "shelfLocation": "Aisle 2, Shelf C",
+      "summary": "Elizabeth Bennet navigates love, manners, and misunderstanding in 19th-century England, challenging class and gender expectations."
+    },
+    {
+      "id": "1984",
+      "title": "1984",
+      "author": "George Orwell",
+      "isbn": "9780451524935",
+      "genre": "Dystopian",
+      "count": 4,
+      "shelfLocation": "Aisle 3, Shelf B",
+      "summary": "In a totalitarian future, Winston Smith rebels against a regime that controls every thought, emotion, and memory."
+    },
+    {
+      "id": "catcher-rye",
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "isbn": "9780316769488",
+      "genre": "Classic",
+      "count": 2,
+      "shelfLocation": "Aisle 4, Shelf D",
+      "summary": "Holden Caulfield recounts his days in New York City as he struggles with alienation, loss, and the transition into adulthood."
+    },
+    {
+      "id": "mobydick",
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "isbn": "9781503280786",
+      "genre": "Adventure",
+      "count": 3,
+      "shelfLocation": "Aisle 5, Shelf F",
+      "summary": "Captain Ahab obsessively hunts the great white whale, Moby Dick, in a tale of revenge and obsession at sea."
+    },
+    {
+      "id": "gatsby",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "genre": "Classic",
+      "count": 6,
+      "shelfLocation": "Aisle 6, Shelf B",
+      "summary": "Jay Gatsby’s lavish parties hide his yearning for Daisy Buchanan and the elusive American dream in 1920s New York."
+    }
   ],
   "newArrivals": [
-    {"id": "odyssey", "title": "The Count of Monte Cristo", "author": "Alenxandre Dumas", "isbn": "9780140449266", "genre": "Epic"},
-    {"id": "mockingbird", "title": "To Kill a Mockingbird", "author": "Harper Lee", "isbn": "9780061120084", "genre": "Classic"},
-    {"id": "hp3", "title": "Harry Potter and the Goblet of Fire", "author": "J.K. Rowling", "isbn": "9780439139601", "genre": "Fantasy"},
-    {"id": "dragon-tattoo", "title": "Da Vinci Code", "author": "Dan Brown", "isbn": "9780307474278", "genre": "Thriller"},
-    {"id": "got", "title": "A Game of Thrones", "author": "George R. R. Martin", "isbn": "9780553386790", "genre": "Fantasy"},
-    {"id": "goldfinch", "title": "Inferno", "author": "Dan Brown", "isbn": "9780385537858", "genre": "Fiction"},
-    {"id": "night-circus", "title": "The Night Circus", "author": "Erin Morgenstern","isbn": "9780385671736", "genre": "Fantasy"},
-    {"id": "educated", "title": "Educated", "author": "Tara Westover", "genre": "Memoir"},
-    {"id": "becoming", "title": "Becoming", "author": "Michelle Obama", "genre": "Memoir"},
-    {"id": "martian", "title": "The Martian", "author": "Andy Weir", "genre": "Sci-Fi"}
+    {
+      "id": "odyssey",
+      "title": "The Count of Monte Cristo",
+      "author": "Alenxandre Dumas",
+      "isbn": "9780140449266",
+      "genre": "Epic",
+      "count": 4,
+      "shelfLocation": "New Arrivals A",
+      "summary": "After being wrongfully imprisoned, Edmond Dantès escapes and embarks on a quest for revenge and justice as the mysterious Count of Monte Cristo."
+    },
+    {
+      "id": "mockingbird",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "9780061120084",
+      "genre": "Classic",
+      "count": 5,
+      "shelfLocation": "New Arrivals B",
+      "summary": "Scout Finch grows up in the racially divided American South, learning about empathy and justice through her father, Atticus Finch."
+    },
+    {
+      "id": "hp3",
+      "title": "Harry Potter and the Goblet of Fire",
+      "author": "J.K. Rowling",
+      "isbn": "9780439139601",
+      "genre": "Fantasy",
+      "count": 6,
+      "shelfLocation": "Fantasy Zone A",
+      "summary": "Harry is unexpectedly chosen for the dangerous Triwizard Tournament, uncovering dark secrets and the return of Lord Voldemort."
+    },
+    {
+      "id": "dragon-tattoo",
+      "title": "Da Vinci Code",
+      "author": "Dan Brown",
+      "isbn": "9780307474278",
+      "genre": "Thriller",
+      "count": 4,
+      "shelfLocation": "Thriller Section 1",
+      "summary": "A symbologist and a cryptologist unravel a hidden conspiracy within the Catholic Church involving secret societies and ancient symbols."
+    },
+    {
+      "id": "got",
+      "title": "A Game of Thrones",
+      "author": "George R. R. Martin",
+      "isbn": "9780553386790",
+      "genre": "Fantasy",
+      "count": 5,
+      "shelfLocation": "Fantasy Zone B",
+      "summary": "Noble families vie for power over the Seven Kingdoms, while winter and dark forces approach from the North."
+    },
+    {
+      "id": "goldfinch",
+      "title": "Inferno",
+      "author": "Dan Brown",
+      "isbn": "9780385537858",
+      "genre": "Fiction",
+      "count": 4,
+      "shelfLocation": "Fiction Area 2",
+      "summary": "Robert Langdon wakes in an Italian hospital with no memory and races to stop a deadly global plague inspired by Dante’s Inferno."
+    },
+    {
+      "id": "night-circus",
+      "title": "The Night Circus",
+      "author": "Erin Morgenstern",
+      "isbn": "9780385671736",
+      "genre": "Fantasy",
+      "count": 3,
+      "shelfLocation": "Fantasy Zone C",
+      "summary": "Two young illusionists compete in a magical contest within a mysterious circus that appears only at night."
+    },
+    {
+      "id": "educated",
+      "title": "Educated",
+      "author": "Tara Westover",
+      "genre": "Memoir",
+      "count": 4,
+      "shelfLocation": "Biography Section",
+      "summary": "Tara Westover recounts her journey from growing up isolated in rural Idaho to earning a PhD and discovering her own identity."
+    },
+    {
+      "id": "becoming",
+      "title": "Becoming",
+      "author": "Michelle Obama",
+      "genre": "Memoir",
+      "count": 5,
+      "shelfLocation": "Biography Section",
+      "summary": "Former First Lady Michelle Obama shares her story of growth, resilience, and public service from childhood to the White House."
+    },
+    {
+      "id": "martian",
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "genre": "Sci-Fi",
+      "count": 6,
+      "shelfLocation": "Science Fiction 1",
+      "summary": "Astronaut Mark Watney is stranded on Mars and must use ingenuity and humor to survive until rescue arrives."
+    }
   ],
   "liked": [
-    {"id": "rpo", "title": "Ready Player One", "author": "Ernest Cline", "isbn": "9780307887443", "genre": "Sci-Fi"},
-    {"id": "midnight-library", "title": "The Midnight Library", "author": "Matt Haig", "isbn": "9780525559474", "genre": "Fiction"},
-    {"id": "crawdads", "title": "Where the Crawdads Sing", "author": "Delia Owens", "isbn": "9780735219090", "genre": "Fiction"},
-    {"id": "alchemist", "title": "The Alchemist", "author": "Paulo Coelho", "isbn": "9780062315007", "genre": "Fiction"},
-    {"id": "light-cannot-see", "title": "All the Light We Cannot See", "author": "Anthony Doerr", "isbn": "9781476746586", "genre": "Historical"},
-    {"id": "shadow-wind", "title": "The Shadow of the Wind", "author": "Carlos Ruiz Zafón", "isbn": "9780143034902", "genre": "Mystery"},
-    {"id": "sapiens", "title": "Sapiens", "author": "Yuval Noah Harari", "isbn": "9780062316110", "genre": "Non-fiction"},
-    {"id": "normal-people", "title": "Normal People", "author": "Sally Rooney", "isbn": "9781984822178", "genre": "Fiction"},
-    {"id": "silent-patient", "title": "The Silent Patient", "author": "Alex Michaelides", "isbn": "9781250301697", "genre": "Thriller"},
-    {"id": "circe", "title": "Circe", "author": "Madeline Miller", "isbn": "9780316556347", "genre": "Fantasy"}
-]
+    {
+      "id": "rpo",
+      "title": "Ready Player One",
+      "author": "Ernest Cline",
+      "isbn": "9780307887443",
+      "genre": "Sci-Fi",
+      "count": 3,
+      "shelfLocation": "Popular Reads 1",
+      "summary": "In a dystopian future, a teenager enters a virtual world to hunt for a hidden prize that could change his life forever."
+    },
+    {
+      "id": "midnight-library",
+      "title": "The Midnight Library",
+      "author": "Matt Haig",
+      "isbn": "9780525559474",
+      "genre": "Fiction",
+      "count": 4,
+      "shelfLocation": "Popular Reads 2",
+      "summary": "Between life and death lies a library where Nora Seed explores alternate versions of her life to find what truly matters."
+    },
+    {
+      "id": "crawdads",
+      "title": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "isbn": "9780735219090",
+      "genre": "Fiction",
+      "count": 5,
+      "shelfLocation": "Popular Reads 3",
+      "summary": "In the marshes of North Carolina, a reclusive young woman becomes entangled in a murder mystery that mirrors her loneliness."
+    },
+    {
+      "id": "alchemist",
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "isbn": "9780062315007",
+      "genre": "Fiction",
+      "count": 5,
+      "shelfLocation": "Popular Reads 4",
+      "summary": "A shepherd named Santiago travels from Spain to Egypt in search of treasure and discovers the deeper meaning of destiny."
+    },
+    {
+      "id": "light-cannot-see",
+      "title": "All the Light We Cannot See",
+      "author": "Anthony Doerr",
+      "isbn": "9781476746586",
+      "genre": "Historical",
+      "count": 3,
+      "shelfLocation": "Historical Section",
+      "summary": "A blind French girl and a German soldier cross paths during World War II in a story about survival and hope."
+    },
+    {
+      "id": "shadow-wind",
+      "title": "The Shadow of the Wind",
+      "author": "Carlos Ruiz Zafón",
+      "isbn": "9780143034902",
+      "genre": "Mystery",
+      "count": 2,
+      "shelfLocation": "Mystery Shelf A",
+      "summary": "A boy discovers a mysterious book that leads him into the dark secrets of post-war Barcelona and its hidden past."
+    },
+    {
+      "id": "sapiens",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "isbn": "9780062316110",
+      "genre": "Non-fiction",
+      "count": 4,
+      "shelfLocation": "Non-fiction Zone",
+      "summary": "A sweeping history of humankind from early evolution to modern society, examining how shared beliefs shaped civilizations."
+    },
+    {
+      "id": "normal-people",
+      "title": "Normal People",
+      "author": "Sally Rooney",
+      "isbn": "9781984822178",
+      "genre": "Fiction",
+      "count": 4,
+      "shelfLocation": "Popular Reads 5",
+      "summary": "Two Irish teenagers navigate an intense relationship as they move from small-town schoolmates to university students."
+    },
+    {
+      "id": "silent-patient",
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "isbn": "9781250301697",
+      "genre": "Thriller",
+      "count": 3,
+      "shelfLocation": "Thriller Section 2",
+      "summary": "After murdering her husband, a woman stops speaking entirely, and her therapist becomes obsessed with uncovering the truth."
+    },
+    {
+      "id": "circe",
+      "title": "Circe",
+      "author": "Madeline Miller",
+      "isbn": "9780316556347",
+      "genre": "Fantasy",
+      "count": 5,
+      "shelfLocation": "Fantasy Zone D",
+      "summary": "Circe, the daughter of a god, defies Olympus and hones her powers of witchcraft while shaping her own destiny among mortals."
+    }
+  ],
+  "moreBooks": [
+    {
+      "id": "dune",
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "isbn": "9780441013593",
+      "genre": "Sci-Fi",
+      "count": 4,
+      "shelfLocation": "Science Fiction 2",
+      "summary": "Paul Atreides navigates political intrigue and destiny on the desert planet Arrakis, home to the valuable spice melange."
+    },
+    {
+      "id": "beloved",
+      "title": "Beloved",
+      "author": "Toni Morrison",
+      "isbn": "9781400033416",
+      "genre": "Historical",
+      "count": 3,
+      "shelfLocation": "Historical Section B",
+      "summary": "Sethe, a former slave, confronts her past and a mysterious figure who embodies the pain of her history in post-Civil War Ohio."
+    },
+    {
+      "id": "brave-new-world",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "isbn": "9780060850524",
+      "genre": "Dystopian",
+      "count": 3,
+      "shelfLocation": "Dystopian Shelf A",
+      "summary": "In a futuristic society, citizens are genetically engineered and pacified by a drug, but one man questions the cost of conformity."
+    },
+    {
+      "id": "frankenstein",
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "isbn": "9780141439471",
+      "genre": "Classic",
+      "count": 2,
+      "shelfLocation": "Classic Shelf A",
+      "summary": "Victor Frankenstein’s creation of a living being leads to tragedy as the creature seeks identity and vengeance."
+    },
+    {
+      "id": "handmaids-tale",
+      "title": "The Handmaid’s Tale",
+      "author": "Margaret Atwood",
+      "isbn": "9780385490819",
+      "genre": "Dystopian",
+      "count": 4,
+      "shelfLocation": "Dystopian Shelf B",
+      "summary": "In a totalitarian regime, Offred navigates life as a handmaid forced to bear children in a world where fertility has plummeted."
+    },
+    {
+      "id": "lotr-fellowship",
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780547928210",
+      "genre": "Fantasy",
+      "count": 5,
+      "shelfLocation": "Fantasy Zone E",
+      "summary": "Frodo Baggins embarks on a quest to destroy a powerful ring, joined by a fellowship of hobbits, men, an elf, and a dwarf."
+    },
+    {
+      "id": "jane-eyre",
+      "title": "Jane Eyre",
+      "author": "Charlotte Brontë",
+      "isbn": "9780141441146",
+      "genre": "Classic",
+      "count": 3,
+      "shelfLocation": "Classic Shelf B",
+      "summary": "Jane Eyre, an orphaned governess, finds love and independence while confronting dark secrets at Thornfield Hall."
+    },
+    {
+      "id": "fahrenheit-451",
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "isbn": "9781451673319",
+      "genre": "Dystopian",
+      "count": 3,
+      "shelfLocation": "Dystopian Shelf C",
+      "summary": "Fireman Guy Montag burns books in a future where knowledge is outlawed, until he begins to question his role."
+    },
+    {
+      "id": "wuthering-heights",
+      "title": "Wuthering Heights",
+      "author": "Emily Brontë",
+      "isbn": "9780141439556",
+      "genre": "Classic",
+      "count": 2,
+      "shelfLocation": "Classic Shelf C",
+      "summary": "Heathcliff and Catherine’s passionate love story unfolds amid the wild moors, marked by vengeance and tragedy."
+    },
+    {
+      "id": "name-of-the-wind",
+      "title": "The Name of the Wind",
+      "author": "Patrick Rothfuss",
+      "isbn": "9780756404079",
+      "genre": "Fantasy",
+      "count": 4,
+      "shelfLocation": "Fantasy Zone F",
+      "summary": "Kvothe, a gifted musician and magician, recounts his rise from orphan to legendary figure in a richly detailed world."
+    },
+    {
+      "id": "animal-farm",
+      "title": "Animal Farm",
+      "author": "George Orwell",
+      "isbn": "9780451526342",
+      "genre": "Dystopian",
+      "count": 3,
+      "shelfLocation": "Dystopian Shelf D",
+      "summary": "Farm animals overthrow their human owners, only to face a new tyranny in this allegory of power and corruption."
+    },
+    {
+      "id": "song-of-achilles",
+      "title": "The Song of Achilles",
+      "author": "Madeline Miller",
+      "isbn": "9780062060624",
+      "genre": "Historical",
+      "count": 4,
+      "shelfLocation": "Historical Section C",
+      "summary": "Patroclus narrates his deep bond with Achilles, set against the backdrop of the Trojan War and divine interventions."
+    },
+    {
+      "id": "gone-girl",
+      "title": "Gone Girl",
+      "author": "Gillian Flynn",
+      "isbn": "9780307588371",
+      "genre": "Thriller",
+      "count": 4,
+      "shelfLocation": "Thriller Section 3",
+      "summary": "When Amy Dunne disappears, her husband Nick becomes a suspect in a twisted tale of marriage and deception."
+    },
+    {
+      "id": "hunger-games",
+      "title": "The Hunger Games",
+      "author": "Suzanne Collins",
+      "isbn": "9780439023481",
+      "genre": "Dystopian",
+      "count": 5,
+      "shelfLocation": "Young Adult A",
+      "summary": "Katniss Everdeen volunteers for a deadly televised competition to save her sister, sparking rebellion in a dystopian world."
+    },
+    {
+      "id": "life-of-pi",
+      "title": "Life of Pi",
+      "author": "Yann Martel",
+      "isbn": "9780156027328",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 3",
+      "summary": "Pi Patel survives a shipwreck and shares a lifeboat with a tiger, blending adventure, spirituality, and survival."
+    },
+    {
+      "id": "percy-jackson-lightning",
+      "title": "Percy Jackson and the Lightning Thief",
+      "author": "Rick Riordan",
+      "isbn": "9780786838653",
+      "genre": "Fantasy",
+      "count": 5,
+      "shelfLocation": "Young Adult B",
+      "summary": "Percy Jackson discovers he’s a demigod and embarks on a quest to retrieve Zeus’s stolen lightning bolt."
+    },
+    {
+      "id": "kiterunner",
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "isbn": "9781594480003",
+      "genre": "Fiction",
+      "count": 4,
+      "shelfLocation": "Fiction Area 4",
+      "summary": "Amir’s journey from childhood betrayal in Afghanistan to redemption explores friendship, guilt, and family."
+    },
+    {
+      "id": "slaughterhouse-five",
+      "title": "Slaughterhouse-Five",
+      "author": "Kurt Vonnegut",
+      "isbn": "9780385333849",
+      "genre": "Sci-Fi",
+      "count": 3,
+      "shelfLocation": "Science Fiction 3",
+      "summary": "Billy Pilgrim becomes unstuck in time, experiencing war, alien abduction, and his own life out of order."
+    },
+    {
+      "id": "east-of-eden",
+      "title": "East of Eden",
+      "author": "John Steinbeck",
+      "isbn": "9780140186390",
+      "genre": "Classic",
+      "count": 3,
+      "shelfLocation": "Classic Shelf D",
+      "summary": "The Trask and Hamilton families grapple with good, evil, and free will in California’s Salinas Valley."
+    },
+    {
+      "id": "girl-with-dragon-tattoo",
+      "title": "The Girl with the Dragon Tattoo",
+      "author": "Stieg Larsson",
+      "isbn": "9780307454546",
+      "genre": "Thriller",
+      "count": 4,
+      "shelfLocation": "Thriller Section 4",
+      "summary": "A journalist and a hacker investigate a decades-old disappearance, uncovering dark family secrets."
+    },
+    {
+      "id": "little-women",
+      "title": "Little Women",
+      "author": "Louisa May Alcott",
+      "isbn": "9780140390698",
+      "genre": "Classic",
+      "count": 3,
+      "shelfLocation": "Classic Shelf E",
+      "summary": "The March sisters navigate love, loss, and personal growth during the American Civil War."
+    },
+    {
+      "id": "storm-of-swords",
+      "title": "A Storm of Swords",
+      "author": "George R. R. Martin",
+      "isbn": "9780553573428",
+      "genre": "Fantasy",
+      "count": 4,
+      "shelfLocation": "Fantasy Zone G",
+      "summary": "The Seven Kingdoms descend into chaos as rival houses clash and betrayals mount in this epic fantasy."
+    },
+    {
+      "id": "catcher-in-the-rye",
+      "title": "The Bell Jar",
+      "author": "Sylvia Plath",
+      "isbn": "9780060174903",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 5",
+      "summary": "Esther Greenwood descends into mental illness, reflecting on identity and societal pressures in 1950s America."
+    },
+    {
+      "id": "never-let-me-go",
+      "title": "Never Let Me Go",
+      "author": "Kazuo Ishiguro",
+      "isbn": "9781400078776",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 6",
+      "summary": "Three friends raised in a mysterious boarding school uncover the haunting truth about their purpose and future."
+    },
+    {
+      "id": "brief-wondrous-life",
+      "title": "The Brief Wondrous Life of Oscar Wao",
+      "author": "Junot Díaz",
+      "isbn": "9781594483295",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 7",
+      "summary": "Oscar, a nerdy Dominican-American, chases love and identity while grappling with a family curse across generations."
+    },
+    {
+      "id": "road",
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "isbn": "9780307387899",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 8",
+      "summary": "A father and son journey through a post-apocalyptic wasteland, clinging to hope and humanity."
+    },
+    {
+      "id": "middlemarch",
+      "title": "Middlemarch",
+      "author": "George Eliot",
+      "isbn": "9780141439549",
+      "genre": "Classic",
+      "count": 2,
+      "shelfLocation": "Classic Shelf F",
+      "summary": "In a provincial English town, characters pursue ambition, love, and reform amid intricate social dynamics."
+    },
+    {
+      "id": "snow-crash",
+      "title": "Snow Crash",
+      "author": "Neal Stephenson",
+      "isbn": "9780553380958",
+      "genre": "Sci-Fi",
+      "count": 3,
+      "shelfLocation": "Science Fiction 4",
+      "summary": "Hiro Protagonist, a hacker and pizza deliveryman, battles a digital virus threatening a futuristic cyberpunk world."
+    },
+    {
+      "id": "their-eyes-were-watching",
+      "title": "Their Eyes Were Watching God",
+      "author": "Zora Neale Hurston",
+      "isbn": "9780061120060",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 9",
+      "summary": "Janie Crawford seeks love and self-discovery in early 20th-century Florida, defying societal expectations."
+    },
+    {
+      "id": "color-purple",
+      "title": "The Color Purple",
+      "author": "Alice Walker",
+      "isbn": "9780156028356",
+      "genre": "Fiction",
+      "count": 3,
+      "shelfLocation": "Fiction Area 10",
+      "summary": "Celie overcomes abuse and oppression in rural Georgia, finding strength through friendship and self-expression."
+    }
+  ]
 }
-

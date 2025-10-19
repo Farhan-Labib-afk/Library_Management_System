@@ -1,17 +1,19 @@
-// Parse query params
+// ----------- UTILITIES -----------
 function getParam(name) {
   const url = new URL(window.location.href);
   return url.searchParams.get(name);
 }
 
-// Cover helpers (same logic as dashboard)
-const buildCoverUrl = (type, id) => `https://covers.openlibrary.org/b/${type}/${encodeURIComponent(id)}-L.jpg?default=false`;
+const buildCoverUrl = (type, id) =>
+  `https://covers.openlibrary.org/b/${type}/${encodeURIComponent(id)}-L.jpg?default=false`;
 
 async function urlIfExists(url) {
   try {
     const res = await fetch(url, { method: "HEAD" });
     return res.ok ? url : null;
-  } catch (_) { return null; }
+  } catch (_) {
+    return null;
+  }
 }
 
 async function fetchOlidByQuery(title, author) {
@@ -23,86 +25,127 @@ async function fetchOlidByQuery(title, author) {
     if (!res.ok) return null;
     const data = await res.json();
     const doc = data?.docs?.[0];
-    const olid = doc?.cover_edition_key || (Array.isArray(doc?.edition_key) ? doc.edition_key[0] : null);
-    return olid || null;
-  } catch (_) { return null; }
+    return doc?.cover_edition_key || (doc?.edition_key?.[0] ?? null);
+  } catch (_) {
+    return null;
+  }
 }
 
 async function resolveCover(imgEl, meta) {
   if (meta.isbn) {
-    const u = await urlIfExists(buildCoverUrl('isbn', meta.isbn));
-    if (u) { imgEl.src = u; return; }
+    const u = await urlIfExists(buildCoverUrl("isbn", meta.isbn));
+    if (u) return (imgEl.src = u);
   }
   if (meta.olid) {
-    const u = await urlIfExists(buildCoverUrl('olid', meta.olid));
-    if (u) { imgEl.src = u; return; }
+    const u = await urlIfExists(buildCoverUrl("olid", meta.olid));
+    if (u) return (imgEl.src = u);
   }
   if (meta.title) {
     const olid = await fetchOlidByQuery(meta.title, meta.author);
     if (olid) {
-      const u = await urlIfExists(buildCoverUrl('olid', olid));
-      if (u) { imgEl.src = u; return; }
+      const u = await urlIfExists(buildCoverUrl("olid", olid));
+      if (u) return (imgEl.src = u);
     }
   }
-  imgEl.src = 'assets/images/book_fb.png';
+  imgEl.src = "assets/images/book_fb.png";
 }
 
+// ----------- DATA LOADING -----------
 async function loadBooksJson() {
-  const res = await fetch('data/books.json');
-  if (!res.ok) throw new Error('books.json load failed');
+  const res = await fetch("data/books.json");
+  if (!res.ok) throw new Error("books.json load failed");
   return res.json();
-}
-
-function fillDetails(book) {
-  const titleEl = document.getElementById('bookTitle');
-  const authorEl = document.getElementById('bookAuthor');
-  const genreEl = document.getElementById('bookGenre');
-  const isbnEl = document.getElementById('bookIsbn');
-  const olidEl = document.getElementById('bookOlid');
-  const coverEl = document.getElementById('bookCover');
-  const olLink = document.getElementById('openLibraryLink');
-
-  titleEl.textContent = book.title || 'Untitled';
-  authorEl.textContent = book.author || 'Unknown';
-  genreEl.textContent = book.genre || '';
-  isbnEl.textContent = book.isbn || '—';
-  olidEl.textContent = book.olid || '—';
-  coverEl.alt = book.title ? `${book.title} cover` : 'Book cover';
-  olLink.href = book.isbn
-    ? `https://openlibrary.org/isbn/${encodeURIComponent(book.isbn)}`
-    : (book.olid ? `https://openlibrary.org/books/${encodeURIComponent(book.olid)}` : '#');
-
-  // Resolve cover
-  resolveCover(coverEl, book);
 }
 
 function findBookInData(data, id) {
   if (!id) return null;
-  const all = [ ...(data.catalog||[]), ...(data.newArrivals||[]), ...(data.liked||[]) ];
-  return all.find(b => String(b.id) === String(id)) || null;
+  const all = [...(data.catalog || []), ...(data.newArrivals || []), ...(data.liked || [])];
+  return all.find((b) => String(b.id) === String(id)) || null;
 }
 
+// ----------- FILL PAGE -----------
+function fillDetails(book) {
+  document.getElementById("bookTitle").textContent = book.title || "Untitled";
+  document.getElementById("bookAuthor").textContent = book.author || "Unknown";
+  document.getElementById("bookGenre").textContent = book.genre || "";
+  document.getElementById("bookIsbn").textContent = book.isbn || "—";
+  document.getElementById("bookCount").textContent = book.count ?? 0;
+  document.getElementById("bookShelf").textContent = book.shelfLocation || "Unassigned";
+  document.getElementById('bookSummary').textContent = book.summary || 'No summary available.';
+
+
+  const coverEl = document.getElementById("bookCover");
+  coverEl.alt = book.title ? `${book.title} cover` : "Book cover";
+  resolveCover(coverEl, book);
+
+  // cache selected
+  localStorage.setItem("selectedBook", JSON.stringify(book));
+}
+
+// ----------- INVENTORY ACTIONS -----------
+function updateBookCount(delta) {
+  const countEl = document.getElementById("bookCount");
+  let count = parseInt(countEl.textContent || 0);
+  count = Math.max(0, count + delta);
+  countEl.textContent = count;
+
+  const selectedBook = JSON.parse(localStorage.getItem("selectedBook") || "{}");
+  selectedBook.count = count;
+  localStorage.setItem("selectedBook", JSON.stringify(selectedBook));
+
+  // persist changes globally for dashboard reload
+  const updates = JSON.parse(localStorage.getItem("catalogUpdates") || "{}");
+  updates[selectedBook.id] = { count };
+  localStorage.setItem("catalogUpdates", JSON.stringify(updates));
+}
+
+function editShelfLocation() {
+  const newLoc = prompt("Enter new shelf location:");
+  if (!newLoc) return;
+
+  const shelfEl = document.getElementById("bookShelf");
+  shelfEl.textContent = newLoc;
+
+  const selectedBook = JSON.parse(localStorage.getItem("selectedBook") || "{}");
+  selectedBook.shelfLocation = newLoc;
+  localStorage.setItem("selectedBook", JSON.stringify(selectedBook));
+
+  // persist to global catalog updates
+  const updates = JSON.parse(localStorage.getItem("catalogUpdates") || "{}");
+  if (!updates[selectedBook.id]) updates[selectedBook.id] = {};
+  updates[selectedBook.id].shelfLocation = newLoc;
+  localStorage.setItem("catalogUpdates", JSON.stringify(updates));
+}
+
+// ----------- INIT -----------
 async function init() {
-  const id = getParam('id');
+  const id = getParam("id");
   try {
     const data = await loadBooksJson();
     let book = findBookInData(data, id);
+
     if (!book) {
-      // Fallback from localStorage
-      try {
-        const cached = JSON.parse(localStorage.getItem('selectedBook') || 'null');
-        if (cached) book = cached;
-      } catch (_) {}
+      const cached = JSON.parse(localStorage.getItem("selectedBook") || "null");
+      book = cached || { title: "Book not found" };
     }
-    if (!book) throw new Error('Book not found');
+
+    // merge previous changes from localStorage
+    const updates = JSON.parse(localStorage.getItem("catalogUpdates") || "{}");
+    if (updates[book.id]) Object.assign(book, updates[book.id]);
+
     fillDetails(book);
+
+    document.getElementById("addCopyBtn").addEventListener("click", () => updateBookCount(1));
+    document.getElementById("removeCopyBtn").addEventListener("click", () => updateBookCount(-1));
+    document.getElementById("editShelfBtn").addEventListener("click", editShelfLocation);
   } catch (e) {
-    // Minimal error state
-    fillDetails({ title: 'Book not found', author: '', genre: '', isbn: '', olid: '' });
+    console.error(e);
+    fillDetails({ title: "Book not found" });
   }
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else { init(); }
-
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
