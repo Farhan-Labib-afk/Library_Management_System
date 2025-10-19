@@ -1,0 +1,35 @@
+{
+  "catalog": [
+    {"id": "the-hobbit", "title": "The Hobbit", "author": "J.R.R. Tolkien", "isbn": "9780345339683", "genre": "Fantasy"},
+    {"id": "pride-prejudice", "title": "Pride and Prejudice", "author": "Jane Austen", "isbn": "9780141439518", "genre": "Classic"},
+    {"id": "1984", "title": "1984", "author": "George Orwell", "isbn": "9780451524935", "genre": "Dystopian"},
+    {"id": "catcher-rye", "title": "The Catcher in the Rye", "author": "J.D. Salinger", "isbn": "9780316769488", "genre": "Classic"},
+    {"id": "mobydick", "title": "Moby-Dick", "author": "Herman Melville", "isbn": "9781503280786", "genre": "Adventure"},
+    {"id": "gatsby", "title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "isbn": "9780743273565", "genre": "Classic"}
+  ],
+  "newArrivals": [
+    {"id": "odyssey", "title": "The Count of Monte Cristo", "author": "Alenxandre Dumas", "isbn": "9780140449266", "genre": "Epic"},
+    {"id": "mockingbird", "title": "To Kill a Mockingbird", "author": "Harper Lee", "isbn": "9780061120084", "genre": "Classic"},
+    {"id": "hp3", "title": "Harry Potter and the Goblet of Fire", "author": "J.K. Rowling", "isbn": "9780439139601", "genre": "Fantasy"},
+    {"id": "dragon-tattoo", "title": "Da Vinci Code", "author": "Dan Brown", "isbn": "9780307474278", "genre": "Thriller"},
+    {"id": "got", "title": "A Game of Thrones", "author": "George R. R. Martin", "isbn": "9780553386790", "genre": "Fantasy"},
+    {"id": "goldfinch", "title": "Inferno", "author": "Dan Brown", "isbn": "9780385537858", "genre": "Fiction"},
+    {"id": "night-circus", "title": "The Night Circus", "author": "Erin Morgenstern","isbn": "9780385671736", "genre": "Fantasy"},
+    {"id": "educated", "title": "Educated", "author": "Tara Westover", "genre": "Memoir"},
+    {"id": "becoming", "title": "Becoming", "author": "Michelle Obama", "genre": "Memoir"},
+    {"id": "martian", "title": "The Martian", "author": "Andy Weir", "genre": "Sci-Fi"}
+  ],
+  "liked": [
+    {"id": "rpo", "title": "Ready Player One", "author": "Ernest Cline", "isbn": "9780307887443", "genre": "Sci-Fi"},
+    {"id": "midnight-library", "title": "The Midnight Library", "author": "Matt Haig", "isbn": "9780525559474", "genre": "Fiction"},
+    {"id": "crawdads", "title": "Where the Crawdads Sing", "author": "Delia Owens", "isbn": "9780735219090", "genre": "Fiction"},
+    {"id": "alchemist", "title": "The Alchemist", "author": "Paulo Coelho", "isbn": "9780062315007", "genre": "Fiction"},
+    {"id": "light-cannot-see", "title": "All the Light We Cannot See", "author": "Anthony Doerr", "isbn": "9781476746586", "genre": "Historical"},
+    {"id": "shadow-wind", "title": "The Shadow of the Wind", "author": "Carlos Ruiz Zafón", "isbn": "9780143034902", "genre": "Mystery"},
+    {"id": "sapiens", "title": "Sapiens", "author": "Yuval Noah Harari", "isbn": "9780062316110", "genre": "Non-fiction"},
+    {"id": "normal-people", "title": "Normal People", "author": "Sally Rooney", "isbn": "9781984822178", "genre": "Fiction"},
+    {"id": "silent-patient", "title": "The Silent Patient", "author": "Alex Michaelides", "isbn": "9781250301697", "genre": "Thriller"},
+    {"id": "circe", "title": "Circe", "author": "Madeline Miller", "isbn": "9780316556347", "genre": "Fantasy"}
+]
+}
+

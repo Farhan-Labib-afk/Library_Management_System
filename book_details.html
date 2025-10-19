@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Details</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/book_details.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="assets/icons/cpl_logo.png" />
+  <style>
+    /* In case book_details.css fails to load, ensure image size */
+    #bookCover { width: 150px; height: 220px; object-fit: cover; border-radius: 6px; }
+  </style>
+  </head>
+<body>
+  <header class="topbar">
+    <div class="left-section">
+      <a href="dashboard.html" class="menu-btn" title="Back to Dashboard"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="topbar-center">
+      <img src="assets/icons/cpl_logo.png" alt="CPL Logo" class="topbar-logo">
+    </div>
+    <div></div>
+  </header>
+
+  <main class="main">
+    <section class="content">
+      <div class="details">
+        <div class="cover-col">
+          <img id="bookCover" src="assets/images/book_fb.png" alt="Book cover" />
+        </div>
+        <div class="info-col">
+          <h1 id="bookTitle">Loading…</h1>
+          <div class="sub">
+            <span id="bookAuthor"></span>
+            <span id="bookGenre" class="pill"></span>
+          </div>
+          <div class="ids">
+            <div><strong>ISBN:</strong> <span id="bookIsbn">—</span></div>
+            <div><strong>OLID:</strong> <span id="bookOlid">—</span></div>
+          </div>
+          <div class="actions">
+            <a id="openLibraryLink" href="#" target="_blank" rel="noopener">View on Open Library</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/book_details.js"></script>
+</body>
+</html>
+

@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1d3d4f;
+  background: #006e6e;
   color: white;
   padding: 12px 24px;
   height: 68px; /* a bit taller */
@@ -78,7 +78,7 @@ body {
 }
 
 .search-btn {
-  background: linear-gradient(135deg, #1d3d4f, #177db9);
+  background: linear-gradient(135deg, #016f6f, #1ab8b8);
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -151,7 +151,7 @@ body {
   top: 68px; /* match taller topbar */
   width: 230px;
   height: calc(100vh - 68px);
-  background: #1d3d4f;
+  background: #006e6e;
   color: white;
   padding: 20px 0;
   transition: left 0.3s ease;
@@ -174,7 +174,7 @@ body {
 
 .nav li:hover,
 .nav li.active {
-  background: linear-gradient(135deg, #1d3d4f, #177db9);
+  background: linear-gradient(135deg, #006e6e, #1ab8b8);
   font-weight: 600;
 }
 
@@ -205,7 +205,7 @@ body {
 }
 
 .role {
-  color:  #265d7d;
+  color:  #086565;
 }
 
 /* ---------- QUICK ACTIONS ---------- */
@@ -222,7 +222,7 @@ body {
   padding: 16px;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(135deg,  #1d3d4f, #177db9);
+  background: linear-gradient(135deg,  #016f6f, #1ab8b8);
   color: white;
   font-size: 1rem;
   font-weight: 500;
@@ -254,7 +254,7 @@ body {
 }
 
 .see-more {
-  background: linear-gradient(135deg, #1d3d4f, #177db9);
+  background: linear-gradient(135deg, #016f6f, #1ab8b8);
   border: none;
   color: white;
   padding: 8px 14px;
@@ -264,7 +264,7 @@ body {
 }
 
 .see-more:hover {
-  background: #52796f;
+  background: #0e6c6c;
 }
 
 .book-carousel {
@@ -289,6 +289,45 @@ body {
 .book-carousel img:hover,
 .swiper .swiper-slide img:hover {
   transform: scale(1.05);
+}
+
+/* ---------- BOOK HOVER META ---------- */
+.book-card {
+  position: relative;
+  width: 150px;
+}
+
+.book-card .book-meta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 10px;
+  background: linear-gradient(to top, rgba(47,62,70,0.9), rgba(47,62,70,0.55), rgba(47,62,70,0));
+  color: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.book-card:hover .book-meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-meta .book-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.book-meta .book-sub {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin-top: 2px;
 }
 
 /* ---------- SWIPER ---------- */
@@ -322,7 +361,7 @@ body {
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  color: #2a7cff; /* modern blue on hover */
+  color: #00d0d0; /* Teal on hover */
   transform: translateY(-50%) scale(1.05);
 }
 
