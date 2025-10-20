@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transfer & Logistics | Calgary Public Library</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/transfer.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left-section">
+      <a href="dashboard.html" class="menu-btn" title="Back to Dashboard"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="topbar-center">
+      <img src="assets/icons/cpl_logo.png" alt="CPL Logo" class="topbar-logo">
+    </div>
+    <div></div>
+  </header>
+
+  <main class="main">
+    <section class="content">
+      <h1 class="fade-in">Transfer & Logistics</h1>
+      <p class="subtext fade-in">Manage inter-branch shipments and generate reports for inventory review.</p>
+
+      <h2 class="fade-in">📦 Incoming Shipments</h2>
+      <div id="incomingList" class="transfer-list fade-in">
+        <p style="text-align:center;">Loading shipments...</p>
+      </div>
+
+      <h2 class="fade-in" style="margin-top:30px;">🚚 Outgoing Transfers</h2>
+      <div id="outgoingList" class="transfer-list fade-in">
+        <p style="text-align:center;">No active outgoing transfers.</p>
+      </div>
+
+      <hr class="fade-in" style="margin:30px 0;">
+      <h2 class="fade-in" style="text-align:center;">📑 Generated Shipment Reports</h2>
+      <div id="reportList" class="transfer-list fade-in"></div>
+
+      <hr class="fade-in" style="margin:30px 0;">
+      <h2 class="fade-in" style="text-align:center;">📜 Recent Transfer Activity</h2>
+      <ul id="transferLog" class="activity-log fade-in"></ul>
+    </section>
+  </main>
+
+  <audio id="successSound" src="assets/sounds/success.mp3" preload="auto"></audio>
+  <script src="js/transfer.js"></script>
+</body>
+</html>

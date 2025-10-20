@@ -1,0 +1,82 @@
+.transfer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.transfer-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  position: relative;
+}
+.transfer-card:hover { transform: translateY(-2px); }
+
+.transfer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transfer-header h3 {
+  font-size: 1.1rem;
+  color: #004a4a;
+}
+
+.transfer-info {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  color: #444;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.action-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.accept-btn { background: linear-gradient(135deg, #016f6f, #00b4b4); }
+.reject-btn { background: linear-gradient(135deg, #d9534f, #b22222); }
+.delay-btn { background: linear-gradient(135deg, #f0ad4e, #c77c00); }
+
+.transfer-card.accepted::before {
+  content: "Report Generated";
+  background: #00a896;
+  color: white;
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.activity-log {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.activity-log li {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.activity-log li.accepted { border-left: 4px solid #28a745; }
+.activity-log li.rejected { border-left: 4px solid #d9534f; }
+.activity-log li.delayed { border-left: 4px solid #f0ad4e; }
