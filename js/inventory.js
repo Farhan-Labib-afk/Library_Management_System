@@ -119,3 +119,56 @@ if (document.readyState === "loading") {
 } else {
   loadBooks();
 }
+
+// ---------- SHIPMENT REPORT REVIEW ----------
+const reportReviewList = document.getElementById("reportReviewList");
+
+function loadShipmentReports() {
+  const reports = JSON.parse(localStorage.getItem("shipmentReports") || "[]");
+  const pending = reports.filter(r => r.status !== "Resolved");
+  if (!pending.length) {
+    reportReviewList.innerHTML = `<p style="text-align:center;">No shipment reports awaiting review.</p>`;
+    return;
+  }
+
+  reportReviewList.innerHTML = pending.map(r => `
+    <div class="report-card" id="report-${r.id}">
+      <div class="report-header">
+        <h3>Report: ${r.id}</h3>
+        <span>🕒 ${r.createdAt}</span>
+      </div>
+      <div class="report-info">
+        <p><strong>From:</strong> ${r.from}</p>
+        <p><strong>Status:</strong> ${r.status}</p>
+        <p><strong>Books Included:</strong></p>
+        <ul>${r.books.map(b => `<li>${b.id} — ${b.quantity} copies</li>`).join("")}</ul>
+      </div>
+      <div class="report-actions">
+        <button class="report-btn resolve" onclick="resolveReport('${r.id}')">Marked as Resolved</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+// ---------- Resolve Report (mark as resolved only) ----------
+function resolveReport(id) {
+  const reports = JSON.parse(localStorage.getItem("shipmentReports") || "[]");
+  const report = reports.find(r => r.id === id);
+  if (!report) return;
+
+  // Do not modify inventory counts here; Inventory Clerk updates manually
+  report.status = "Resolved";
+  localStorage.setItem("shipmentReports", JSON.stringify(reports));
+
+  loadShipmentReports();
+  alert(`Report ${id} marked as resolved.`);
+}
+
+
+// ---------- INIT ----------
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", loadShipmentReports);
+} else {
+  loadShipmentReports();
+}
+
