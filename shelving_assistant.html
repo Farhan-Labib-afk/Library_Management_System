@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shelving Assistant | Calgary Public Library</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/shelving.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="left-section">
+      <a href="dashboard.html" class="menu-btn" title="Back to Dashboard"><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+    <div class="topbar-center">
+      <img src="assets/icons/cpl_logo.png" alt="CPL Logo" class="topbar-logo">
+    </div>
+    <div></div>
+  </header>
+
+  <main class="main">
+    <section class="content">
+      <h1 class="fade-in">Shelving Assistant</h1>
+      <p class="subtext fade-in">Mark each book's condition and confirm shelving.</p>
+
+      <p id="progressSummary" class="progress-text fade-in">Loading...</p>
+
+      <div id="shelvingList" class="book-list fade-in">
+        <p style="text-align:center;">Loading books...</p>
+      </div>
+
+      <hr class="fade-in" style="margin:30px 0;">
+      <h2 class="fade-in" style="text-align:center;">Recent Shelving Activity</h2>
+      <ul id="activityLog" class="activity-log fade-in"></ul>
+    </section>
+  </main>
+
+  <audio id="successSound" src="assets/sounds/success.mp3" preload="auto"></audio>
+  <script src="js/shelving.js"></script>
+</body>
+</html>

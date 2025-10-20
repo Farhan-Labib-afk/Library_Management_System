@@ -1,0 +1,82 @@
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.book-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.book-card:hover { transform: translateY(-3px); }
+
+.book-card img {
+  width: 130px;
+  height: 190px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+.book-info h3 { font-size: 1rem; margin-bottom: 4px; }
+.book-info p { font-size: 0.85rem; margin: 2px 0; }
+
+.condition-select {
+  width: 100%;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.shelve-btn, .inspect-btn {
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 10px;
+  margin-top: 8px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.shelve-btn {
+  background: linear-gradient(135deg, #007777, #00b4b4);
+}
+.inspect-btn {
+  background: linear-gradient(135deg, #d9534f, #b22222);
+}
+
+.progress-text {
+  text-align: center;
+  font-weight: 600;
+  color: #004a4a;
+  margin-bottom: 20px;
+}
+
+.activity-log {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.activity-log li {
+  background: #f8f8f8;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.activity-log li.good { border-left: 4px solid #28a745; }
+.activity-log li.worn { border-left: 4px solid #f0ad4e; }
+.activity-log li.damaged { border-left: 4px solid #d9534f; }
+
+.fade-success { animation: fadeSuccess 0.8s ease-in-out; }
+@keyframes fadeSuccess { from { background: #c9f7c9; } to { background: #fff; } }

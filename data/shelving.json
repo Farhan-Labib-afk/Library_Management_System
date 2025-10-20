@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "description": "Active shelving queue for Calgary Public Library – managed by volunteer Alan",
+    "lastUpdated": "2025-10-19"
+  },
+  "copies": [
+    {
+      "copyId": "hobbit-1",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780345339683",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone A"
+    },
+    {
+      "copyId": "hobbit-2",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780345339683",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone A"
+    },
+    {
+      "copyId": "hobbit-3",
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "isbn": "9780345339683",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone A"
+    },
+    {
+      "copyId": "gatsby-1",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "genre": "Classic",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Classic Shelf A"
+    },
+    {
+      "copyId": "gatsby-2",
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "isbn": "9780743273565",
+      "genre": "Classic",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Classic Shelf A"
+    },
+    {
+      "copyId": "mockingbird-1",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "9780061120084",
+      "genre": "Classic",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Classic Shelf B"
+    },
+    {
+      "copyId": "mockingbird-2",
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "isbn": "9780061120084",
+      "genre": "Classic",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Classic Shelf B"
+    },
+    {
+      "copyId": "1984-1",
+      "title": "1984",
+      "author": "George Orwell",
+      "isbn": "9780451524935",
+      "genre": "Dystopian",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Dystopian Shelf A"
+    },
+    {
+      "copyId": "1984-2",
+      "title": "1984",
+      "author": "George Orwell",
+      "isbn": "9780451524935",
+      "genre": "Dystopian",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Dystopian Shelf A"
+    },
+    {
+      "CopyId": "east-of-eden-1",
+      "title": "East of Eden",
+      "author": "John Steinbeck",
+      "isbn": "9780140186390",
+      "genre": "Classic",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Adventure Corner"
+    },
+    {
+      "CopyId": "east-of-eden-2",
+      "title": "East of Eden",
+      "author": "John Steinbeck",
+      "isbn": "9780140186390",
+      "genre": "Classic",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Adventure Corner"
+    },
+    {
+      "copyId": "hp4-1",
+      "title": "Harry Potter and the Goblet of Fire",
+      "author": "J.K. Rowling",
+      "isbn": "9780439139601",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone B"
+    },
+    {
+      "copyId": "hp4-2",
+      "title": "Harry Potter and the Goblet of Fire",
+      "author": "J.K. Rowling",
+      "isbn": "9780439139601",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone B"
+    },
+    {
+      "copyId": "got-1",
+      "title": "A Game of Thrones",
+      "author": "George R. R. Martin",
+      "isbn": "9780553386790",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone C"
+    },
+    {
+      "copyId": "got-2",
+      "title": "A Game of Thrones",
+      "author": "George R. R. Martin",
+      "isbn": "9780553386790",
+      "genre": "Fantasy",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fantasy Zone C"
+    },
+    {
+      "copyId": "inferno-1",
+      "title": "Inferno",
+      "author": "Dan Brown",
+      "isbn": "9780385537858",
+      "genre": "Thriller",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Thriller Section 1"
+    },
+    {
+      "copyId": "inferno-2",
+      "title": "Inferno",
+      "author": "Dan Brown",
+      "isbn": "9780385537858",
+      "genre": "Thriller",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Thriller Section 1"
+    },
+    {
+      "copyId": "martian-1",
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "isbn": "9780804139021",
+      "genre": "Sci-Fi",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Science Fiction 1"
+    },
+    {
+      "copyId": "martian-2",
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "isbn": "9780804139021",
+      "genre": "Sci-Fi",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Science Fiction 1"
+    },
+    {
+      "copyId": "alchemist-1",
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "isbn": "9780062315007",
+      "genre": "Fiction",
+      "status": "Pending",
+      "condition": "",
+      "suggestedShelf": "Fiction Area 2"
+    }
+  ]
+}
